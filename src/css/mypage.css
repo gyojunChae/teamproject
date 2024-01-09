@@ -51,8 +51,9 @@
   align-items: center;
 }
 .idBox-icons img {
+  transform: translate(0, 0px);
   margin-left: 3px;
-  width: 12px;
+  width: 13px;
 }
 .idBox-icons__redCircle {
   margin-left: 3px;
@@ -67,7 +68,7 @@
   justify-content: center;
   align-items: center;
 }
-.id-bar__iconBox div {
+.id-bar__iconBox a {
   display: flex;
   justify-content: center;
   align-items: center;

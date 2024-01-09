@@ -71,6 +71,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .id-bar__iconBox img {
   margin: 0 10px 0 5px;
@@ -182,6 +183,7 @@
   font-weight: 550;
   height: 25px;
   margin-right: 5px;
+  cursor: pointer;
 }
 .edit-bar__profile-share {
   display: flex;

@@ -1,32 +1,12 @@
 .mypage-header {
+  background-color: white;
   position: fixed;
-  top: 0px;
+  top: 30px;
   left: 0px;
   width: 100vw;
   /* height: 33vh; */
 }
-/*맨 위 시간과 배터리*/
-.time-bar {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 20px;
-}
-.time-bar__time {
-  font-size: 12px;
-  margin-left: 20px;
-}
-.time-bar__iconBox {
-  margin-right: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.time-bar__iconBox img {
-  width: 14px;
-  margin-left: 5px;
-}
+
 /* 아이디 바 */
 .id-bar {
   display: flex;
@@ -210,18 +190,18 @@
 
 /* 메인! */
 .mypage-main {
-  position: fixed;
   margin-top: 220px;
-  left: 0px;
   width: 100vw;
 }
-section {
+.section {
+  position: fixed;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
-section img {
+.section img {
   width: 20px;
 }
 .section-gallery {

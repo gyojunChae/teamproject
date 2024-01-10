@@ -1,12 +1,39 @@
+<script>
+  import { onMount } from "svelte";
+  import Timebar from "./Timebar.svelte";
+  import { getDatabase, ref, onValue } from "firebase/database";
+
+  const calcTime = (timestamp) => {
+    //한국시간 UTC+9
+    const curTime = new Date().getTime() - 9 * 60 * 60 * 1000;
+    const time = new Date(curTime - timestamp);
+    const hour = time.getHours();
+    const minute = time.getMinutes();
+    const second = time.getSeconds();
+
+    if (hour > 0 && hour < 24) return `${hour}시간 전`;
+    else if (hour >= 24)
+      return `${time.getFullYear()}년 ${time.getMonth()}월 ${time.getDay()}일`;
+    else if (minute > 0) return `${minute}분 전`;
+    else if (second > 0) return `${second}초 전`;
+    else return "방금 전";
+  };
+
+  $: posts = [];
+
+  const db = getDatabase();
+  const postRef = ref(db, "posts/");
+
+  onMount(() => {
+    onValue(postRef, (snapshot) => {
+      const data = snapshot.val();
+      posts = Object.values(data);
+    });
+  });
+</script>
+
+<Timebar />
 <div class="mypage-header">
-  <div class="time-bar">
-    <div class="time-bar__time">1:41</div>
-    <div class="time-bar__iconBox">
-      <img src="assets/chart-bar.svg" alt="" />
-      <img src="assets/wifi.svg" alt="" />
-      <img src="assets/battery.svg" alt="" />
-    </div>
-  </div>
   <div class="id-bar">
     <div class="id-bar__idBox">
       <div class="idBox-id">super_coding24</div>
@@ -53,7 +80,7 @@
   </div>
 </div>
 <div class="mypage-main">
-  <section>
+  <div class="section">
     <div class="section-gallery">
       <img src="assets/gallery.svg" alt="gallert" />
     </div>
@@ -63,7 +90,42 @@
     <div class="section-tagme">
       <img src="assets/tagme.svg" alt="tagme" />
     </div>
-  </section>
-  <div class="gallery"></div>
+  </div>
+  <div class="gallery">
+    {#each posts as post}
+      <div class="gallery-post">
+        <div class="gallery-post__img">
+          <img src={post.imgUrl} alt="이미지" />
+        </div>
+        <div class="gallery-post__title">{post.title}</div>
+        <div class="gallery-post__writer">{post.writer}</div>
+        <div class="gallery-post__postAt">{calcTime(post.postAt)}</div>
+        <div class="gallery-post__detail">{post.detail}</div>
+      </div>
+    {/each}
+  </div>
 </div>
 <footer></footer>
+
+<style>
+  .gallery {
+    transform: translate(0, 40px);
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+    grid-row-gap: 2px;
+    grid-column-gap: 2px;
+    margin: 0px 10px 0 10px;
+  }
+  .gallery-post__img {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 3px;
+    margin: 0.5px;
+    overflow: hidden;
+  }
+  .gallery-post__img img {
+    width: 30vw;
+    height: 30vw;
+  }
+</style>

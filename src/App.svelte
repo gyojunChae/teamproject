@@ -15,8 +15,3 @@
 </script>
 
 <Router {routes} />
-
-<main></main>
-
-<style>
-</style>

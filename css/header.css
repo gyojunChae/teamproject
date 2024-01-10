@@ -1,0 +1,31 @@
+@import "main.css";
+@import "footer.css";
+header {
+  margin-top: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+.menubar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  align-items: center;
+}
+.menubar-photoicons {
+  width: 35px;
+  padding-left: 20px;
+}
+.menubar-icons img {
+  width: 35px;
+  margin: 0 10px;
+}
+.menubar-icons__heart,
+.menubar-icons__paperAirplane {
+  margin: 10px 0 10px 0;
+}
+.menubar-logo {
+  font-size: 50px;
+  font-style: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,13 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Svelte</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <header>
+      <div class="menubar">
+        <div class="menubar-photoicons">
+          <img src="assets/photo.svg" alt="photo" />
+        </div>
+        <div
+          class="menubar-logo"
+          style="font-family: 'Dancing Script', cursive"
+        >
+          Instagram
+        </div>
+        <div class="menubar-icons">
+          <div class="menubar-icons__img">
+            <img src="assets/play.svg" alt="instagramheart" />
+            <img src="assets/paperAirplane.svg" alt="instargrampaperAirplane" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="post">
+        <div class="post-bar">
+          <div class="post-bar__left">
+            <img src="assets/circle.svg" alt="imgcircle" />
+            <div class="post-bar__left__name">
+              <div class="post-bar__nickname">nickname</div>
+              <div class="post-bar__id">nickname_id</div>
+            </div>
+          </div>
+          <div class="post-bar__right">
+            <img src="assets/ellipsis.svg" alt="ellipsis" />
+          </div>
+        </div>
+        <div class="post-img">
+          <img src="assets/image.svg" alt="postimg" />
+        </div>
+        <div class="post-underbar">
+          <div class="post-underbar__left">
+            <img src="assets/heart.svg" alt="postheart" />
+            <img src="assets/comment.svg" alt="postcomment" />
+            <img src="assets/paperAirplane.svg" alt="postlink" />
+            <div class="post-underbar__left__like">22 Likes</div>
+            <div class="post-underbar__left__user#">username Hi! #main</div>
+            <div class="post-underbar__left__comment">6 minutes AGO Hi!</div>
+          </div>
+          <div class="post-underbar__right">
+            <img src="assets/bookmark.svg" alt="bookmark" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="underbar">
+        <div class="underbar-icons">
+          <img src="assets/home.svg" alt="home" />
+        </div>
+        <div class="underbar-icons">
+          <img src="assets/searchbox.svg" alt="search" />
+        </div>
+        <div class="underbar-icons">
+          <img src="assets/plusbox.svg" alt="plus" />
+        </div>
+        <div class="underbar-icons">
+          <img src="assets/heart.svg" alt="heart" />
+        </div>
+        <div class="underbar-icons">
+          <img src="assets/user.svg" alt="user" />
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

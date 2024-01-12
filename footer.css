@@ -1,0 +1,30 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+
+  background-color: white;
+}
+.underbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 0 10px 0;
+}
+
+.underbar-icons {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+}
+
+.underbar-icons img {
+  width: 30px;
+  margin: 0 10px;
+}
